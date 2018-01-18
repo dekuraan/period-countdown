@@ -1,0 +1,153 @@
+@import url('https://rsms.me/interface/interface.css');
+@import 'materialize';
+
+@mixin push--auto {
+    margin: {
+        left: auto;
+        right: auto;
+    }
+}
+
+$breakpoints: (
+    "phone":        400px,
+    "phone-wide":   480px,
+    "phablet":      560px,
+    "tablet-small": 640px,
+    "tablet":       768px,
+    "tablet-wide":  1024px,
+    "desktop":      1248px,
+    "desktop-wide": 1440px
+);
+
+@mixin mq($width, $type: min) {
+    @if map_has_key($breakpoints, $width) {
+        $width: map_get($breakpoints, $width);
+        @if $type == max {
+            $width: $width - 1px;
+        }
+        @media only screen and (#{$type}-width: $width) {
+            @content;
+        }
+    }
+}
+
+body {
+  background-color: gra;
+}
+
+.period {
+  color: #999999;
+  text-align: center;
+  font-family: Interface, sans-serif;
+  font-size: 2.8em;
+}
+
+//
+// ------------------------- FlipClock
+//
+@include mq("phone") {
+
+};
+$clock-flip-font-size: 120px;
+
+$clock-flip-border-radius: $clock-flip-font-size / 15;
+$clock-digit-gap: $clock-flip-font-size / 6;
+$clock-dot-size: $clock-flip-font-size / 6;
+
+$clock-height: $clock-flip-font-size * 1.2;
+$clock-flip-width: $clock-flip-font-size * 0.8;
+$clock-flip-margin: $clock-digit-gap / 2;
+$clock-flip-section-width: 2 * ($clock-flip-width + 2 * $clock-flip-margin);
+
+$clock-flip-bg: #607D8B;
+$clock-flip-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+$clock-flip-font-color: #F44336;
+$clock-flip-font-shadow: 0 1px 2px #000;
+
+.center {
+    text-align: center;
+}
+
+.clock {
+    display: inline-block;
+    width: auto;
+}
+
+.clock-wrapper {
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.clock.flip-clock-wrapper ul {
+  height: $clock-height;
+  margin: 0 $clock-flip-margin;
+  width: $clock-flip-width;
+  box-shadow: $clock-flip-shadow;
+}
+
+.clock.flip-clock-wrapper ul li {
+  line-height: $clock-height;
+}
+
+.clock.flip-clock-wrapper ul li a div div.inn {
+  background-color: $clock-flip-bg;
+  color: $clock-flip-font-color;
+  font-size: $clock-flip-font-size;
+  text-shadow: $clock-flip-font-shadow;
+}
+
+.clock.flip-clock-wrapper ul,
+.clock.flip-clock-wrapper ul li a div div.inn {
+  border-radius: $clock-flip-border-radius;
+}
+
+.clock.flip-clock-wrapper ul li a div.down {
+  border-bottom-left-radius: $clock-flip-border-radius;
+  border-bottom-right-radius: $clock-flip-border-radius;
+}
+
+.clock.flip-clock-wrapper ul li a div.up:after {
+  top: $clock-height / 2 - 1px;
+}
+
+.clock .flip-clock-dot.top {
+  top: $clock-height / 2 - $clock-flip-font-size * 0.2 - $clock-dot-size / 2;
+}
+
+.clock .flip-clock-dot.bottom {
+  top: $clock-height / 2 + $clock-flip-font-size * 0.2 - $clock-dot-size / 2;
+}
+
+.clock .flip-clock-dot {
+  height: $clock-dot-size;
+  left: $clock-dot-size;
+  width: $clock-dot-size;
+  background: $clock-flip-bg;
+}
+
+.clock .flip-clock-divider {
+  height: $clock-height;
+  width: $clock-dot-size * 3;
+
+  &:first-child {
+    width: 0;
+  }
+}
+
+.clock .flip-clock-divider.seconds .flip-clock-label,
+.clock .flip-clock-divider.minutes .flip-clock-label,
+.clock .flip-clock-divider.hours .flip-clock-label {
+  right: -1 * $clock-flip-section-width;
+}
+
+.clock .flip-clock-divider .flip-clock-label {
+  color: $clock-flip-font-color;
+  font-size: $clock-flip-font-size / 4;
+  width: 2 * $clock-flip-width + 4 * $clock-flip-margin;
+}
+
+//
+// ------------------------- FlipClock
+//
