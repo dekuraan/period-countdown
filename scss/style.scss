@@ -1,42 +1,10 @@
 @import url('https://rsms.me/interface/interface.css');
-@import 'materialize';
-
-@mixin push--auto {
-    margin: {
-        left: auto;
-        right: auto;
-    }
-}
-
-$breakpoints: (
-    "phone":        400px,
-    "phone-wide":   480px,
-    "phablet":      560px,
-    "tablet-small": 640px,
-    "tablet":       768px,
-    "tablet-wide":  1024px,
-    "desktop":      1248px,
-    "desktop-wide": 1440px
-);
-
-@mixin mq($width, $type: min) {
-    @if map_has_key($breakpoints, $width) {
-        $width: map_get($breakpoints, $width);
-        @if $type == max {
-            $width: $width - 1px;
-        }
-        @media only screen and (#{$type}-width: $width) {
-            @content;
-        }
-    }
-}
-
 body {
-  background-color: gra;
+  background-color: gray;
 }
 
 .period {
-  color: #999999;
+  color: #e0e0e0;
   text-align: center;
   font-family: Interface, sans-serif;
   font-size: 2.8em;
@@ -45,9 +13,7 @@ body {
 //
 // ------------------------- FlipClock
 //
-@include mq("phone") {
 
-};
 $clock-flip-font-size: 120px;
 
 $clock-flip-border-radius: $clock-flip-font-size / 15;
@@ -59,9 +25,9 @@ $clock-flip-width: $clock-flip-font-size * 0.8;
 $clock-flip-margin: $clock-digit-gap / 2;
 $clock-flip-section-width: 2 * ($clock-flip-width + 2 * $clock-flip-margin);
 
-$clock-flip-bg: #607D8B;
+$clock-flip-bg: #424242;
 $clock-flip-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
-$clock-flip-font-color: #F44336;
+$clock-flip-font-color: #e0e0e0;
 $clock-flip-font-shadow: 0 1px 2px #000;
 
 .center {
@@ -79,7 +45,7 @@ $clock-flip-font-shadow: 0 1px 2px #000;
   top: 50%;
   transform: translate(-50%, -50%);
 }
-
+//PROBLEM!!!
 .clock.flip-clock-wrapper ul {
   height: $clock-height;
   margin: 0 $clock-flip-margin;
