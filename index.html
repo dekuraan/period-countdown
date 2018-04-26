@@ -1,77 +1,40 @@
-<html class="">
+<!DOCTYPE html>
+<html class="html">
 <head>
-  <!--Load FavIcon-->
-  <link rel="icon" href="https://storage.googleapis.com/material-icons/external-assets/v4/icons/svg/ic_timer_black_48px.svg">
-	<!--Import Google Icon Font-->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	<!--Import Google Roboto Font-->
-	<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
-	<!--Import materialize.css-->
-  <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.css"  media="screen,projection"/>
-	<!--Import flipclock.css-->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flipclock/0.7.8/flipclock.css">
-	<!--Import style.css-->
-	<link rel="stylesheet" href="css/style.css">
-  <!--Let browser know website is optimized for mobile-->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-	<!--Set UTF-8-->
-	<meta charset="UTF-8">
-	<title>Countdown v3.0</title>
-	<script>
-	(function(i, s, o, g, r, a, m) {
-  i["GoogleAnalyticsObject"] = r;
-  (i[r] =
-    i[r] ||
-    function() {
-      (i[r].q = i[r].q || []).push(arguments);
-    }),
-    (i[r].l = 1 * new Date());
-  (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
-  a.async = 1;
-  a.src = g;
-  m.parentNode.insertBefore(a, m);
-})(
-  window,
-  document,
-  "script",
-  "https://www.google-analytics.com/analytics.js",
-  "ga"
-);
-
-ga("create", "UA-105610915-1", "auto");
-ga("send", "pageview");
-</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/flipclock.css">
+  <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>
-	<!--Import jQuery before materialize.js-->
-	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-	<!--Import materialize.js-->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-	<!--Import flipclock.js-->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/flipclock/0.7.8/flipclock.min.js" type="text/javascript"></script>
-	<!--Import index.js-->
-	<script src="js/index.js" type="text/javascript"></script>
- </div>
-	<p id="period" class="period"></p>
-	<div class="center">
-		<div class="clock"></div>
+  <div class="container">
+    <div id="period-title" class="period-title"></div>
+    <div class="countdown"></div>
+    <div class="countdown-container">
+      <div class="subtitle">Hours</div>
+      <div id="hours" class="hours"></div>
+      <div class="subtitle">Minutes</div>
+      <div id="minutes" class="minutes"></div>
+      <div class="subtitle">Seconds</div>
+      <div id="seconds" class="seconds"></div>
+    </div>
   </div>
-	<div style="background: none repeat scroll 0 0 transparent;
-        bottom: 0;
-        position: fixed;
-        text-align: center;
-        width: 100%;">
-		<div style=".footer {
-        background: none repeat scroll 0 0 ;
-        height: 100px;
-        margin: auto;
-        width: 400px;">
-			<p style="
-		font-family: Interface, sans-serif;
-    font-size: 2ems;
-    color: #999999;">Version 3.0 by Declan Li-Carney</p>
-		</div>
+  <div class="footer">By: Declan Li-Carney</div>
+  <!-- Scripts -->
+  <script type="text/javascript" src="/js/jquery.js"></script>
+  <script type="text/javascript" src="/js/enquire.js"></script>
+  <script type="text/javascript" src="/js/flipclock.js"></script>
+  <script type="text/javascript" src="/js/index.js"></script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-75026068-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-75026068-1');
+</script>
+
 </body>
 
 </html>
