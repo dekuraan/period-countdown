@@ -18,7 +18,7 @@ var periods = [
   new Period("End of Period 2 and the Beginning of Flex", 10, 35),
   new Period("End of Flex and the Beginning of Period 3", 11, 25),
   new Period("End of Period 3", 12, 45),
-  new Period("Beginning of Period 5", 12, 50),
+  new Period("Beginning of Period 4", 12, 50),
   new Period("End of Period 4", 14, 10),
   new Period("Beginning of Period 5", 14, 15),
   new Period("End of Period 5", 15, 35),
