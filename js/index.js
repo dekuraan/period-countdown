@@ -24,7 +24,8 @@ var periods = [
   new Period("End of Period 5", 15, 35),
   new Period("Beginning of Early Athletics", 15, 45),
   new Period("End of Early Athletics and the Beginning of Late Athletics", 17, 15),
-  new Period("End of Late Athletics", 18, 45)
+  new Period("End of Late Athletics", 18, 45),
+  new Period("Midnight", 24,00)
 ];
 
 var restartCountdown = function() {
